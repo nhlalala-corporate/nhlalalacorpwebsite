@@ -98,7 +98,7 @@
           </p>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <div v-for="(sector, index) in focusSectors" :key="index" class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl text-center transition-all duration-300 hover:shadow-md fade-in">
             <div class="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center text-white mb-4 mx-auto">
               <i :class="`${sector.icon} text-xl`"></i>
