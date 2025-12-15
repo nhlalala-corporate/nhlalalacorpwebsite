@@ -40,7 +40,7 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Email</h3>
-                  <p class="text-gray-600 dark:text-gray-400">info@nhlalala.co.za</p>
+                  <p class="text-gray-600 dark:text-gray-400">info@nhlalalacorp.co.za</p>
                 </div>
               </div>
               
