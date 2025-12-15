@@ -141,7 +141,7 @@
                     <option value="cybersecurity">Cybersecurity</option>
                     <option value="software">Software Development</option>
                     <option value="website">Website Development</option>
-                    <option value="data">Data Analytics</option>
+                    <option value="data">Data Management</option>
                     <option value="infrastructure">Infrastructure Solutions</option>
                     <option value="other">Other</option>
                   </select>
