@@ -71,7 +71,7 @@
               </div>
               <div class="absolute -bottom-6 -left-6 w-32 h-32 gradient-bg rounded-2xl flex items-center justify-center text-white shadow-lg">
                 <div class="text-center">
-                  <div class="text-3xl font-bold">2019</div>
+                  <div class="text-3xl font-bold">2009</div>
                   <div class="text-sm">Established</div>
                 </div>
               </div>
