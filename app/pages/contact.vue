@@ -60,7 +60,7 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Business Hours</h3>
-                  <p class="text-gray-600 dark:text-gray-400">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                  <p class="text-gray-600 dark:text-gray-400">Monday - Friday: 8:00 AM - 4:30 PM</p>
                 </div>
               </div>
             </div>
