@@ -172,11 +172,9 @@ const services = [
 
 const focusSectors = [
   { name: 'Government', icon: 'fas fa-landmark' },
-  { name: 'Healthcare', icon: 'fas fa-hospital' },
-  { name: 'Education', icon: 'fas fa-graduation-cap' },
   { name: 'Telco', icon: 'fas fa-broadcast-tower' },
-  { name: 'Utilities', icon: 'fas fa-bolt' },
-  { name: 'Retail', icon: 'fas fa-shopping-cart' },
+  { name: 'Finance', icon: 'fas fa-bolt' },
+  { name: 'Insurance', icon: 'fas fa-shopping-cart' },
   { name: 'Transportation', icon: 'fas fa-truck' },
   { name: 'Agriculture', icon: 'fas fa-tractor' },
   { name: 'Manufacturing', icon: 'fas fa-industry' },
