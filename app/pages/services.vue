@@ -188,7 +188,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Discover our comprehensive ICT services including consulting, cybersecurity, software development, website development, data analytics, and infrastructure solutions.'
+      content: 'Discover our comprehensive ICT services including consulting, cybersecurity, software development, website development, data management, and infrastructure solutions.'
     }
   ]
 })
