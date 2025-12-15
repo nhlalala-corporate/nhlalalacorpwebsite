@@ -160,7 +160,7 @@ const services = [
   },
   {
     icon: CircleStackIcon,
-    title: 'Data Analytics',
+    title: 'Data Management',
     description: 'By harnessing the power of data, we offer advanced analytics solutions that enable businesses to derive actionable insights and make informed decisions.'
   },
   {
