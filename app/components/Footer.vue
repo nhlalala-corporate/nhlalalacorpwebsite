@@ -104,7 +104,7 @@
             </li>
             <li class="flex items-start">
               <EnvelopeIcon class="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
-              <span class="text-gray-400">info@nhlalala.co.za</span>
+              <span class="text-gray-400">info@nhlalalacorp.co.za</span>
             </li>
             <li class="flex items-start">
               <PhoneIcon class="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
@@ -112,7 +112,7 @@
             </li>
             <li class="flex items-start">
               <ClockIcon class="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
-              <span class="text-gray-400">Mon - Fri: 8:00 AM - 5:00 PM</span>
+              <span class="text-gray-400">Mon - Fri: 8:00 AM - 4:30 PM</span>
             </li>
           </ul>
         </div>
