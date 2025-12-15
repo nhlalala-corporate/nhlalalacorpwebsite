@@ -90,7 +90,7 @@
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Software Development</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Website Development</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Management</a></li>
           </ul>
         </div>
         
