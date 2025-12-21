@@ -16,8 +16,16 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
   ],
   runtimeConfig: {
+    mailService: process.env.MAIL_SERVICE,
+    mailHost: process.env.MAIL_HOST,
+    mailPort: process.env.MAIL_PORT,
+    mailUser: process.env.MAIL_USER,
+    mailPassword: process.env.MAIL_PASSWORD,
+    contactEmail: process.env.CONTACT_EMAIL,
+    recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     public: {
       siteUrl: process.env.SITE_URL || 'https://nhlalala-corporate.com',
+      recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
     }
   },
   build: {
@@ -67,7 +75,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://www.google.com/recaptcha/api.js?render=6LdRGT4qAAAAAJO53vCj2dGz3J5F2Z4Z3J5F2Z4Z',
+          src: 'https://www.google.com/recaptcha/api.js?render=6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov', // Replace with your actual site key
           defer: true
         },
       ],
