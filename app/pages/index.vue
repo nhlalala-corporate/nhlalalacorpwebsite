@@ -65,6 +65,9 @@
       </div>
     </section>
     
+    <!-- Testimonials Section -->
+    <Testimonials />
+
     <!-- CTA Section -->
     <section class="py-20 bg-white dark:bg-dark-950 transition-colors duration-300">
       <div class="container mx-auto px-4 text-center">
@@ -84,6 +87,7 @@
 
 <script setup>
 import Hero from '@/components/Hero.vue'
+import Testimonials from '@/components/Testimonials.vue'
 
 useHead({
   title: 'Nhlalala Corporate - Technology Solutions',

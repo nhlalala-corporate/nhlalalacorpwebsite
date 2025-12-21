@@ -64,7 +64,12 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-        { rel: 'manifest', href: '/site.webmanifest' },
+      ],
+      script: [
+        {
+          src: 'https://www.google.com/recaptcha/api.js?render=6LdRGT4qAAAAAJO53vCj2dGz3J5F2Z4Z3J5F2Z4Z',
+          defer: true
+        },
       ],
     },
   },

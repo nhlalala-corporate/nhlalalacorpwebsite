@@ -173,8 +173,8 @@
                   <p v-if="errors.file" class="text-red-500 text-sm mt-1">{{ errors.file }}</p>
                 </div>
                 
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   class="w-full gradient-bg text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center"
                   :disabled="isSubmitting"
                 >
@@ -257,21 +257,30 @@ const handleFileUpload = (event) => {
 
 const handleSubmit = async () => {
   if (!validateForm()) return
-  
+
   isSubmitting.value = true
   submitMessage.value = ''
-  
+
   try {
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    // In a real application, you would send the form data to your backend
-    console.log('Form submitted:', formData.value)
-    
+    // Execute reCAPTCHA
+    const token = await executeRecaptcha('contact_form')
+
+    // Prepare form data with reCAPTCHA token
+    const formDataWithRecaptcha = {
+      ...formData.value,
+      'g-recaptcha-response': token
+    }
+
+    // Send form data to backend API
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: formDataWithRecaptcha
+    })
+
     // Show success message
     submitMessage.value = 'Your message has been sent successfully! We will get back to you soon.'
     submitMessageClass.value = 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
-    
+
     // Reset form
     formData.value = {
       name: '',
@@ -281,16 +290,32 @@ const handleSubmit = async () => {
       message: '',
       file: null
     }
-    
+
     // Reset file input
     const fileInput = document.getElementById('attachment')
     if (fileInput) fileInput.value = ''
   } catch (error) {
+    console.error('Error submitting form:', error)
     submitMessage.value = 'There was an error sending your message. Please try again later.'
     submitMessageClass.value = 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
   } finally {
     isSubmitting.value = false
   }
+}
+
+// Function to execute reCAPTCHA
+const executeRecaptcha = (action) => {
+  return new Promise((resolve, reject) => {
+    if (typeof grecaptcha !== 'undefined') {
+      grecaptcha.ready(() => {
+        grecaptcha.execute('6LdRGT4qAAAAAJO53vCj2dGz3J5F2Z4Z3J5F2Z4Z', { action })
+          .then(resolve)
+          .catch(reject)
+      })
+    } else {
+      reject(new Error('reCAPTCHA is not loaded'))
+    }
+  })
 }
 
 useHead({

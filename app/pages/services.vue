@@ -31,61 +31,6 @@
       </div>
     </section>
 
-    <!-- Purpose and Principles Section -->
-    <section class="py-20 bg-gray-50 dark:bg-dark-900 transition-colors duration-300">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Our Purpose and Principles</h2>
-          <div class="h-1 w-20 bg-primary-600 mx-auto"></div>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div class="fade-in">
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Our purpose is to pioneer technology services across Africa, driving digital transformation and empowering businesses with innovative solutions, exceptional services, and sustainable growth.
-            </p>
-            
-            <div class="space-y-8">
-              <div class="flex items-start">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">01</div>
-                <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Mission</h3>
-                  <p class="text-gray-600 dark:text-gray-400">To provide our valued customers with peace of mind through innovation, service, quality, and ongoing enhancement.</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">02</div>
-                <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Core Principles</h3>
-                  <p class="text-gray-600 dark:text-gray-400">Our principles encompass Integrity, Dependability, Innovation, Competence, Leadership, and Accountability.</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">03</div>
-                <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Quality</h3>
-                  <p class="text-gray-600 dark:text-gray-400">We are committed to continuous improvement, embracing industry best practices, and standards to guarantee the utmost level of customer satisfaction.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="fade-in">
-            <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg h-full">
-              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-6 mx-auto">
-                <i class="fas fa-bullseye text-2xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 text-center">Our Commitment</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-center">
-                We are dedicated to delivering excellence in every project, ensuring that our solutions not only meet but exceed your expectations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Focus Sectors Section -->
     <section class="py-20 bg-white dark:bg-dark-950 transition-colors duration-300">
@@ -99,11 +44,13 @@
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div v-for="(sector, index) in focusSectors" :key="index" class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl text-center transition-all duration-300 hover:shadow-md fade-in">
-            <div class="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center text-white mb-4 mx-auto">
-              <i :class="`${sector.icon} text-xl`"></i>
+          <div v-for="(sector, index) in focusSectors" :key="index" class="bg-gray-50 dark:bg-dark-900 p-6 rounded-xl transition-all duration-300 hover:shadow-md fade-in">
+            <div class="flex items-center">
+              <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center text-white flex-shrink-0 mr-3">
+                <i :class="`${sector.icon} text-base`"></i>
+              </div>
+              <h3 class="font-semibold text-gray-800 dark:text-white text-sm">{{ sector.name }}</h3>
             </div>
-            <h3 class="font-semibold text-gray-800 dark:text-white">{{ sector.name }}</h3>
           </div>
         </div>
       </div>
@@ -141,44 +88,50 @@ const services = [
   {
     icon: ChartBarIcon,
     title: 'Consulting Services',
-    description: 'With our wealth of industry expertise, we offer strategic consulting services to help businesses navigate the complexities of the digital landscape and unlock new opportunities for growth.'
+    description: 'With our wealth of industry expertise, we offer strategic consulting services to help businesses navigate the complexities of the digital landscape and unlock new opportunities for growth.',
+    details: 'Our consulting services include business process analysis, technology strategy development, digital transformation planning, and implementation guidance.'
   },
   {
     icon: ShieldCheckIcon,
     title: 'Cybersecurity',
-    description: 'In recognizing the importance of safeguarding digital assets, we provide comprehensive cybersecurity services to protect against evolving threats and vulnerabilities.'
+    description: 'In recognizing the importance of safeguarding digital assets, we provide comprehensive cybersecurity services to protect against evolving threats and vulnerabilities.',
+    details: 'Our cybersecurity solutions include risk assessment, security architecture design, penetration testing, incident response, and security awareness training.'
   },
   {
     icon: CodeBracketIcon,
     title: 'Software Development',
-    description: 'Through leveraging agile methodologies and best-in-class technologies, we develop custom software solutions that streamline operations and enhance efficiency.'
+    description: 'Through leveraging agile methodologies and best-in-class technologies, we develop custom software solutions that streamline operations and enhance efficiency.',
+    details: 'We specialize in full-stack development, API development, cloud-native applications, legacy system modernization, and custom software solutions tailored to your business needs.'
   },
   {
     icon: GlobeAltIcon,
     title: 'Website Development',
-    description: 'With WordPress web development and graphics design services, we deliver tailored solutions that merge creativity with functionality to elevate online presence and brand identity.'
+    description: 'With WordPress web development and graphics design services, we deliver tailored solutions that merge creativity with functionality to elevate online presence and brand identity.',
+    details: 'Our web services include custom website development, WordPress solutions, e-commerce platforms, responsive design, and ongoing maintenance and support.'
   },
   {
     icon: CircleStackIcon,
     title: 'Data Management',
-    description: 'By harnessing the power of data, we offer advanced analytics solutions that enable businesses to derive actionable insights and make informed decisions.'
+    description: 'By harnessing the power of data, we offer advanced analytics solutions that enable businesses to derive actionable insights and make informed decisions.',
+    details: 'Our data services include data warehousing, business intelligence, data visualization, big data analytics, and data governance solutions.'
   },
   {
     icon: ServerIcon,
     title: 'Infrastructure Solutions',
-    description: 'From network architecture to cloud services, we design and implement robust infrastructure solutions that form the backbone of modern enterprises.'
+    description: 'From network architecture to cloud services, we design and implement robust infrastructure solutions that form the backbone of modern enterprises.',
+    details: 'We provide cloud migration services, infrastructure as a service (IaaS), platform as a service (PaaS), network design and implementation, and infrastructure management.'
   }
 ]
 
 const focusSectors = [
   { name: 'Government', icon: 'fas fa-landmark' },
   { name: 'Telco', icon: 'fas fa-broadcast-tower' },
-  { name: 'Finance', icon: 'fas fa-bolt' },
-  { name: 'Insurance', icon: 'fas fa-shopping-cart' },
+  { name: 'Finance', icon: 'fas fa-coins' },
+  { name: 'Insurance', icon: 'fas fa-shield-alt' },
   { name: 'Transportation', icon: 'fas fa-truck' },
   { name: 'Agriculture', icon: 'fas fa-tractor' },
   { name: 'Manufacturing', icon: 'fas fa-industry' },
-  { name: 'Mining', icon: 'fas fa-mountain' }
+  { name: 'Mining', icon: 'fas fa-gem' }
 ]
 
 useHead({

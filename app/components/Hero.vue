@@ -67,7 +67,7 @@ onUnmounted(() => {
 
 <style scoped>
 .hero-section {
-  background-image: url('/images/background.png');
+  background-image: url('/images/background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
