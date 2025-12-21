@@ -45,7 +45,15 @@ export default defineEventHandler(async (event: H3Event) => {
         method: 'POST'
       })
 
-      if (!recaptchaResponseData.success) {
+      // Type guard for recaptchaResponseData
+      if (typeof recaptchaResponseData !== 'object' || recaptchaResponseData === null || !('success' in recaptchaResponseData)) {
+        throw createError({
+          statusCode: 500,
+          statusMessage: 'Invalid response from reCAPTCHA service'
+        })
+      }
+
+      if (recaptchaResponseData.success !== true) {
         throw createError({
           statusCode: 400,
           statusMessage: 'reCAPTCHA verification failed'
