@@ -65,13 +65,13 @@ const animationDuration = clients.length * 3
 
 .client-logo {
   transition: all 0.3s ease;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   opacity: 0.8;
   background-color: white !important; /* Force white background */
 }
 
 .client-logo:hover {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
   opacity: 1;
   transform: scale(1.05);
 }
