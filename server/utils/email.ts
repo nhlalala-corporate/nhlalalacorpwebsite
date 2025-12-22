@@ -47,14 +47,19 @@ export const initEmailTransporter = () => {
   return transporter
 }
 
-export const sendEmail = async (to: string, subject: string, html: string, from?: string) => {
+export const sendEmail = async (to: string, subject: string, html: string, from?: string, text?: string) => {
   const emailTransporter = initEmailTransporter()
 
-  const mailOptions = {
+  const mailOptions: any = {
     from: from || process.env.MAIL_USER,
     to,
     subject,
     html,
+  }
+
+  // Include text alternative if provided
+  if (text) {
+    mailOptions.text = text
   }
 
   try {

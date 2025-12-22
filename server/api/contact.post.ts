@@ -74,20 +74,93 @@ export default defineEventHandler(async (event: H3Event) => {
       })
     }
 
-    // Send email using utility function
+    // Format a beautiful HTML email with text alternative
+    const htmlEmail = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <title>New Contact Form Submission</title>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background-color: #f8f9fa; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+            .content { background-color: #ffffff; padding: 30px; border: 1px solid #e9ecef; }
+            .footer { background-color: #f8f9fa; padding: 15px; text-align: center; border-radius: 0 0 5px 5px; font-size: 0.9em; color: #6c757d; }
+            .field { margin: 15px 0; }
+            .field-label { font-weight: bold; color: #495057; }
+            .field-value { margin-top: 5px; }
+            .highlight { background-color: #e7f3ff; padding: 15px; border-left: 4px solid #0d6efd; margin: 15px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1 style="margin: 0; color: #0d6efd;">New Contact Form Submission</h1>
+            </div>
+
+            <div class="content">
+              <div class="highlight">
+                <p style="margin: 0; font-size: 1.1em;"><strong>Subject:</strong> ${formData.subject}</p>
+              </div>
+
+              <div class="field">
+                <div class="field-label">Name</div>
+                <div class="field-value">${formData.name}</div>
+              </div>
+
+              <div class="field">
+                <div class="field-label">Email</div>
+                <div class="field-value">${formData.email}</div>
+              </div>
+
+              <div class="field">
+                <div class="field-label">Phone</div>
+                <div class="field-value">${formData.phone || 'Not provided'}</div>
+              </div>
+
+              <div class="field">
+                <div class="field-label">Message</div>
+                <div class="field-value" style="white-space: pre-line;">${formData.message.replace(/\n/g, '<br>')}</div>
+              </div>
+            </div>
+
+            <div class="footer">
+              <p>Sent from Nhlalala Corporate Contact Form</p>
+              <p style="margin-top: 10px;">This email was automatically generated. Please do not reply directly to this email.</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
+    // Create a plain text version for email clients that don't support HTML
+    const textEmail = `
+      New Contact Form Submission
+
+      Subject: ${formData.subject}
+
+      Name: ${formData.name}
+
+      Email: ${formData.email}
+
+      Phone: ${formData.phone || 'Not provided'}
+
+      Message:
+      ${formData.message}
+
+      --
+      Sent from Nhlalala Corporate Contact Form
+      This email was automatically generated. Please do not reply directly to this email.
+    `;
+
+    // Send email with both HTML and text versions
     const emailResult = await sendEmail(
-      process.env.CONTACT_EMAIL || 'info@nhlalala.co.za',
+      process.env.CONTACT_EMAIL || 'info@nhlalala-co.za',
       `Contact Form: ${formData.subject}`,
-      `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
-        <p><strong>Subject:</strong> ${formData.subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${formData.message}</p>
-      `,
-      process.env.MAIL_USER
+      htmlEmail,
+      process.env.MAIL_USER,
+      textEmail
     )
 
     return {
