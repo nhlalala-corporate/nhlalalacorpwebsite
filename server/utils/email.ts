@@ -8,13 +8,38 @@ export const initEmailTransporter = () => {
     return transporter
   }
 
+  // Check if required environment variables are set
+  const smtpHost = process.env.SMTP_HOST || process.env.MAIL_HOST || 'smtp.gmail.com'
+  const smtpPort = parseInt(process.env.SMTP_PORT || process.env.MAIL_PORT || '587')
+  const smtpUser = process.env.SMTP_USER || process.env.MAIL_USER
+  const smtpPass = process.env.SMTP_PASS || process.env.MAIL_PASSWORD
+
+  if (!smtpUser || !smtpPass) {
+    console.warn('SMTP credentials not configured. Email sending will be simulated.')
+    // Create a transport that simulates sending email without actually sending
+    return {
+      sendMail: async (options: any) => {
+        console.log('Email simulation (not sent due to missing credentials):', {
+          from: options.from,
+          to: options.to,
+          subject: options.subject,
+          html: options.html
+        })
+        return {
+          messageId: 'simulated-message-id',
+          response: '250 Email simulated successfully'
+        }
+      }
+    } as any
+  }
+
   transporter = createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
+    host: smtpHost,
+    port: smtpPort,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      user: smtpUser,
+      pass: smtpPass,
     },
   })
 

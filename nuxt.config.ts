@@ -23,6 +23,10 @@ export default defineNuxtConfig({
     mailPassword: process.env.MAIL_PASSWORD,
     contactEmail: process.env.CONTACT_EMAIL,
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
+    smtpHost: process.env.SMTP_HOST,
+    smtpPort: process.env.SMTP_PORT,
+    smtpUser: process.env.SMTP_USER,
+    smtpPass: process.env.SMTP_PASS,
     public: {
       siteUrl: process.env.SITE_URL || 'https://nhlalala-corporate.com',
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
