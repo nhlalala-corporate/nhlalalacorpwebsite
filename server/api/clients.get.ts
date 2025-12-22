@@ -29,5 +29,5 @@ export default defineEventHandler(async (event) => {
     }
   ]
 
-  return []//testimonials
+  return testimonials
 })

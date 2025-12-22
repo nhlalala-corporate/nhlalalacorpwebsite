@@ -154,14 +154,15 @@ export default defineEventHandler(async (event: H3Event) => {
       This email was automatically generated. Please do not reply directly to this email.
     `;
 
-    // Send email with both HTML and text versions
-    const emailResult = await sendEmail(
-      process.env.CONTACT_EMAIL || 'info@nhlalala-co.za',
-      `Contact Form: ${formData.subject}`,
-      htmlEmail,
-      process.env.MAIL_USER,
-      textEmail
-    )
+    // Send email with both HTML and text versions using the new email system
+    const emailResult = await sendEmail({
+      to: process.env.DEFAULT_EMAIL_TO || 'info@nhlalala-co.za',
+      subject: `Contact Form: ${formData.subject}`,
+      html: htmlEmail,
+      text: textEmail,
+      from: process.env.DEFAULT_EMAIL_FROM || process.env.MAIL_USER,
+      spamIdentifier: event.node.req.socket.remoteAddress || 'unknown'
+    })
 
     return {
       success: true,
