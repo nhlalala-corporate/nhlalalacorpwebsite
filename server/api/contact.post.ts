@@ -87,7 +87,7 @@ export default defineEventHandler(async (event: H3Event) => {
         <p><strong>Message:</strong></p>
         <p>${formData.message}</p>
       `,
-      process.env.SMTP_USER
+      process.env.MAIL_USER
     )
 
     return {
