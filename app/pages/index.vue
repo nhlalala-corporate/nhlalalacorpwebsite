@@ -54,7 +54,7 @@
             <div class="text-lg opacity-90">Happy Clients</div>
           </div>
           <div class="fade-in">
-            <div class="text-4xl md:text-5xl font-bold mb-2">5+</div>
+            <div class="text-4xl md:text-5xl font-bold mb-2">16+</div>
             <div class="text-lg opacity-90">Years Experience</div>
           </div>
           <div class="fade-in">

@@ -20,13 +20,13 @@
             <div class="h-1 w-16 bg-primary-600 mx-auto"></div>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white dark:bg-dark-800 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
               <div class="flex items-center mb-6">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">DA</div>
+                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">MM</div>
                 <div>
-                  <h4 class="font-bold text-gray-800 dark:text-white">David Anderson</h4>
-                  <p class="text-gray-600 dark:text-gray-400 text-sm">IT Director, Department of Defence</p>
+                  <h4 class="font-bold text-gray-800 dark:text-white">Matsobane Masenya</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">IT Manager, PRASA</p>
                 </div>
               </div>
               <p class="text-gray-600 dark:text-gray-400 italic">
@@ -36,14 +36,26 @@
             
             <div class="bg-white dark:bg-dark-800 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
               <div class="flex items-center mb-6">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">SM</div>
+                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">TM</div>
                 <div>
-                  <h4 class="font-bold text-gray-800 dark:text-white">Sarah Moloi</h4>
+                  <h4 class="font-bold text-gray-800 dark:text-white">Thokozile Mahlaola</h4>
                   <p class="text-gray-600 dark:text-gray-400 text-sm">CEO, The Cherry Blue House</p>
                 </div>
               </div>
               <p class="text-gray-600 dark:text-gray-400 italic">
                 "The website developed by Nhlalala Corporate has transformed our online presence. We've seen a 40% increase in customer engagement since launch."
+              </p>
+            </div>
+             <div class="bg-white dark:bg-dark-800 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+              <div class="flex items-center mb-6">
+                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">KH</div>
+                <div>
+                  <h4 class="font-bold text-gray-800 dark:text-white">Kaveer Harrilall</h4>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Programme Manager, CSIR-SIM</p>
+                </div>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 italic">
+                "Nhlalala Corporate delivered professional Business Analysis services to CSIR under the MCDP for Gamagara Local Municipality, demonstrating strong municipal insight and contributing to improved planning and decision-making."
               </p>
             </div>
           </div>
