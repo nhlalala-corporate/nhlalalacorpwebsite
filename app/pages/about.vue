@@ -18,7 +18,7 @@
           <div class="fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6">Our Story</h2>
             <div class="h-1 w-20 bg-primary-600 mb-8"></div>
-            
+
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Nhlalala Corporate stands as a premier technology services provider operating in Africa, offering comprehensive solutions across the entire spectrum of Information and Communication Technology (ICT), with a steadfast commitment to innovation and excellence.
             </p>
@@ -31,7 +31,7 @@
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
               As a proudly South African company, Nhlalala Corporate remains dedicated to sustainable transformation, striving to make a positive and meaningful impact on society. We proudly hold a Broad-based Black Economic Empowerment (BBBEE) contributor status.
             </p>
-            
+
             <div class="grid grid-cols-2 gap-6 mb-8">
               <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-lg text-center">
                 <div class="text-3xl font-bold text-primary-600 mb-2">5+</div>
@@ -42,7 +42,7 @@
                 <div class="text-gray-600 dark:text-gray-400">Projects Completed</div>
               </div>
             </div>
-            
+
             <div class="flex flex-wrap gap-4">
               <div class="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium">
                 Innovation
@@ -58,15 +58,16 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Second Column: Image -->
           <div class="fade-in">
             <div class="relative">
               <div class="rounded-2xl overflow-hidden shadow-lg">
-                <img
+                <ImageWithPlaceholder
                   src="/images/about-team.webp"
                   alt="Nhlalala Corporate Team"
                   class="w-full h-auto"
+                  placeholder="/images/placeholder.svg"
                 />
               </div>
               <div class="absolute -bottom-6 -left-6 w-32 h-32 gradient-bg rounded-2xl flex items-center justify-center text-white shadow-lg">
@@ -85,123 +86,17 @@
     <section class="py-20 bg-gray-50 dark:bg-dark-900 transition-colors duration-300">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-sm fade-in">
-            <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
-              <i class="fas fa-eye text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Our Vision</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              To be the leading technology partner for organizations across Africa, recognized for our innovation, excellence, and commitment to sustainable transformation.
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-sm fade-in">
-            <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
-              <i class="fas fa-bullseye text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Our Mission</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              To empower African businesses with innovative technology solutions that drive growth, transformation, and sustainable success in the digital age.
-            </p>
-          </div>
+          <VisionSection />
+          <MissionSection />
         </div>
       </div>
     </section>
 
-    <!-- Purpose and Principles Section -->
-    <section class="py-20 bg-white dark:bg-dark-950 transition-colors duration-300">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Our Purpose and Principles</h2>
-          <div class="h-1 w-20 bg-primary-600 mx-auto"></div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <div class="fade-in">
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Our purpose is to pioneer technology services across Africa, driving digital transformation and empowering businesses with innovative solutions, exceptional services, and sustainable growth.
-            </p>
-
-            <div class="space-y-8">
-              <div class="flex items-start">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">01</div>
-                <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Mission</h3>
-                  <p class="text-gray-600 dark:text-gray-400">To provide our valued customers with peace of mind through innovation, service, quality, and ongoing enhancement.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">02</div>
-                <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Core Principles</h3>
-                  <p class="text-gray-600 dark:text-gray-400">Our principles encompass Integrity, Dependability, Innovation, Competence, Leadership, and Accountability.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">03</div>
-                <div>
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Quality</h3>
-                  <p class="text-gray-600 dark:text-gray-400">We are committed to continuous improvement, embracing industry best practices, and standards to guarantee the utmost level of customer satisfaction.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-in">
-            <div class="bg-white dark:bg-dark-800 p-8 rounded-2xl shadow-lg h-full">
-              <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-6 mx-auto">
-                <i class="fas fa-bullseye text-2xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 text-center">Our Commitment</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-center">
-                We are dedicated to delivering excellence in every project, ensuring that our solutions not only meet but exceed your expectations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PurposePrinciples />
 
     <!-- Partners Section -->
     <section class="py-20 bg-gray-100 dark:bg-dark-800 transition-colors duration-300">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Our Partners</h2>
-          <div class="h-1 w-20 bg-primary-600 mx-auto"></div>
-          <p class="text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-3xl mx-auto">
-            Trusted by 20,000+ customers across the world
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/microsoft.png" alt="Microsoft" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/vmware.png" alt="VMware" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/adobe.png" alt="Adobe" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/mcafee.png" alt="McAfee" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/digicert.png" alt="DigiCert" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/bitdefender.png" alt="Bitdefender" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/lenovo.png" alt="Lenovo" class="max-h-24 object-contain">
-          </div>
-          <div class="bg-white dark:bg-dark-700 p-6 rounded-lg flex items-center justify-center h-32 fade-in">
-            <img src="/images/partners/ssoftware.png" alt="S Software" class="max-h-24 object-contain">
-          </div>
-        </div>
-      </div>
+      <PartnersSection />
     </section>
 
     <!-- CTA Section -->
@@ -222,6 +117,13 @@
 </template>
 
 <script setup>
+import VisionSection from '@/components/AboutPage/VisionSection.vue'
+import MissionSection from '@/components/AboutPage/MissionSection.vue'
+import PurposePrinciples from '@/components/AboutPage/PurposePrinciples.vue'
+import PartnersSection from '@/components/AboutPage/PartnersSection.vue'
+import ImageWithPlaceholder from '@/components/ImageWithPlaceholder.vue'
+import { onMounted } from 'vue'
+
 useHead({
   title: 'About Us - Nhlalala Corporate',
   meta: [
@@ -232,7 +134,11 @@ useHead({
   ]
 })
 
-onMounted(() => {
+onMounted(async () => {
+  // Wait for all components to be rendered and data to be loaded
+  await new Promise(resolve => setTimeout(resolve, 100));
+
+  // Set up Intersection Observer to handle fade-in effect for all sections
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -241,6 +147,7 @@ onMounted(() => {
     })
   }, { threshold: 0.1 })
 
+  // Observe all elements with fade-in class
   document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el)
   })
