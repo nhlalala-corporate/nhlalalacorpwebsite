@@ -20,7 +20,7 @@
             <div class="h-1 w-16 bg-primary-600 mx-auto"></div>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white dark:bg-dark-800 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
               <div class="flex items-center mb-6">
                 <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">MM</div>
