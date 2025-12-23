@@ -51,7 +51,7 @@
                 <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">KH</div>
                 <div>
                   <h4 class="font-bold text-gray-800 dark:text-white">Kaveer Harrilall</h4>
-                  <p class="text-gray-600 dark:text-gray-400 text-sm">Programme Manager-SIM, CSIR</p>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">Programme Manager, CSIR-SIM</p>
                 </div>
               </div>
               <p class="text-gray-600 dark:text-gray-400 italic">
