@@ -36,7 +36,7 @@
             
             <div class="bg-white dark:bg-dark-800 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
               <div class="flex items-center mb-6">
-                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">SM</div>
+                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-4">TM</div>
                 <div>
                   <h4 class="font-bold text-gray-800 dark:text-white">Thokozile Mahlaola</h4>
                   <p class="text-gray-600 dark:text-gray-400 text-sm">CEO, The Cherry Blue House</p>
