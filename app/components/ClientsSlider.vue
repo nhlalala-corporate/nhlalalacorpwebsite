@@ -44,7 +44,7 @@ const animationDuration = clients.length * 3
 
 <style scoped>
 .slider-container {
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   width: 100%;
 }
