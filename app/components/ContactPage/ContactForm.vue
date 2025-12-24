@@ -187,7 +187,7 @@ const handleSubmit = async () => {
   try {
     // Execute reCAPTCHA
     const config = useRuntimeConfig()
-    const recaptchaSiteKey = config.public.recaptchaSiteKey || process.env.RECAPTCHA_SITE_KEY || '6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov'
+    const recaptchaSiteKey = config.public.recaptchaSiteKey || process.env.RECAPTCHA_SITE_KEY || '6LexwTUsAAAAAEEj6tM42u7d8cRmIKS0W3_T3Isi'
     const token = await executeRecaptcha('contact_form')
 
     // Prepare form data with reCAPTCHA token
