@@ -187,7 +187,7 @@ const handleSubmit = async () => {
   try {
     // Execute reCAPTCHA
     const config = useRuntimeConfig()
-    const recaptchaSiteKey = config.public.recaptchaSiteKey || process.env.RECAPTCHA_SITE_KEY || '6LexwTUsAAAAAEEj6tM42u7d8cRmIKS0W3_T3Isi'
+    const recaptchaSiteKey = config.public.recaptchaSiteKey || process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2'
     const token = await executeRecaptcha('contact_form')
 
     // Prepare form data with reCAPTCHA token
@@ -236,7 +236,7 @@ const handleSubmit = async () => {
 // Function to execute reCAPTCHA
 const executeRecaptcha = (action) => {
   return new Promise((resolve, reject) => {
-    const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY || '6LexwTUsAAAAAEEj6tM42u7d8cRmIKS0W3_T3Isi' // Default/test key
+    const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2' // Default/test key
     
     if (typeof grecaptcha !== 'undefined') {
       grecaptcha.ready(() => {
