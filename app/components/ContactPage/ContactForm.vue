@@ -236,7 +236,7 @@ const handleSubmit = async () => {
 // Function to execute reCAPTCHA
 const executeRecaptcha = (action) => {
   return new Promise((resolve, reject) => {
-    const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY || '6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov' // Default/test key
+    const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY || '6LexwTUsAAAAAEEj6tM42u7d8cRmIKS0W3_T3Isi' // Default/test key
     
     if (typeof grecaptcha !== 'undefined') {
       grecaptcha.ready(() => {
