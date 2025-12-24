@@ -8,16 +8,14 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
         <div class="fade-in">
-          <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-            Our purpose is to pioneer technology services across Africa, driving digital transformation and empowering businesses with innovative solutions, exceptional services, and sustainable growth.
-          </p>
+          
 
           <div class="space-y-8">
             <div class="flex items-start">
               <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">01</div>
               <div>
-                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Mission</h3>
-                <p class="text-gray-600 dark:text-gray-400">To provide our valued customers with peace of mind through innovation, service, quality, and ongoing enhancement.</p>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Our purpose</h3>
+                <p class="text-gray-600 dark:text-gray-400">To pioneer technology services across Africa, driving digital transformation and empowering businesses with innovative solutions, exceptional services, and sustainable growth.</p>
               </div>
             </div>
 
