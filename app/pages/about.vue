@@ -34,7 +34,7 @@
 
             <div class="grid grid-cols-2 gap-6 mb-8">
               <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-lg text-center">
-                <div class="text-3xl font-bold text-primary-600 mb-2">5+</div>
+                <div class="text-3xl font-bold text-primary-600 mb-2">16+</div>
                 <div class="text-gray-600 dark:text-gray-400">Years Experience</div>
               </div>
               <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-lg text-center">
