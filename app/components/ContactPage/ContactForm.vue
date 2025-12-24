@@ -57,7 +57,7 @@
         >
           <option value="" disabled selected>Select a subject</option>
           <option value="general">General Inquiry</option>
-          <option value="consulting">Consulting Services</option>
+          <option value="consulting">Digital Consulting</option>
           <option value="cybersecurity">Cybersecurity</option>
           <option value="software">Software Development</option>
           <option value="website">Website Development</option>
