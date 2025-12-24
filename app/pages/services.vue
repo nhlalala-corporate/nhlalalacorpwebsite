@@ -69,7 +69,7 @@ import {
 const services = [
   {
     icon: ChartBarIcon,
-    title: 'Consulting Services',
+    title: 'Digital Consulting',
     description: 'With our wealth of industry expertise, we offer strategic consulting services to help businesses navigate the complexities of the digital landscape and unlock new opportunities for growth.',
     details: 'Our consulting services include business process analysis, technology strategy development, digital transformation planning, and implementation guidance.'
   },
