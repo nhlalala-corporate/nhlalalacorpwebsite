@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="py-20 gradient-bg text-white">
       <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">About Nhlalala Corporate</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
         <p class="text-xl opacity-90 max-w-3xl mx-auto">
           Learn about our journey, values, and the partners who trust us to deliver exceptional technology solutions.
         </p>
@@ -29,12 +29,12 @@
               Nhlalala Corporate is driven by a passion for excellence and a commitment to deliver unparalleled value to our clients. As a trusted partner, we empower businesses to embrace innovation, drive transformation, and achieve sustainable success in today's fast-paced world.
             </p>
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              As a proudly South African company, Nhlalala Corporate remains dedicated to sustainable transformation, striving to make a positive and meaningful impact on society. We proudly hold a Broad-based Black Economic Empowerment (BBBEE) contributor status.
+              As a proudly South African company, Nhlalala Corporate remains dedicated to sustainable transformation, striving to make a positive and meaningful impact on society. We proudly hold a Level 1 Broad-based Black Economic Empowerment (BBBEE) contributor status.
             </p>
 
             <div class="grid grid-cols-2 gap-6 mb-8">
               <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-lg text-center">
-                <div class="text-3xl font-bold text-primary-600 mb-2">5+</div>
+                <div class="text-3xl font-bold text-primary-600 mb-2">16+</div>
                 <div class="text-gray-600 dark:text-gray-400">Years Experience</div>
               </div>
               <div class="bg-gray-50 dark:bg-dark-900 p-6 rounded-lg text-center">
@@ -81,6 +81,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- Vision & Mission Section -->
     <section class="py-20 bg-gray-50 dark:bg-dark-900 transition-colors duration-300">
