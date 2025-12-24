@@ -86,7 +86,7 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Services</h3>
           <ul class="space-y-3">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Consulting Services</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Digital Consulting</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Software Development</a></li>
             <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Website Development</a></li>
