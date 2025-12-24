@@ -8,8 +8,6 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
         <div class="fade-in">
-          
-
           <div class="space-y-8">
             <div class="flex items-start">
               <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold mr-6 flex-shrink-0">01</div>
