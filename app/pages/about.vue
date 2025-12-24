@@ -29,7 +29,7 @@
               Nhlalala Corporate is driven by a passion for excellence and a commitment to deliver unparalleled value to our clients. As a trusted partner, we empower businesses to embrace innovation, drive transformation, and achieve sustainable success in today's fast-paced world.
             </p>
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              As a proudly South African company, Nhlalala Corporate remains dedicated to sustainable transformation, striving to make a positive and meaningful impact on society. We proudly hold a Broad-based Black Economic Empowerment (BBBEE) contributor status.
+              As a proudly South African company, Nhlalala Corporate remains dedicated to sustainable transformation, striving to make a positive and meaningful impact on society. We proudly hold a Level 1 Broad-based Black Economic Empowerment (BBBEE) contributor status.
             </p>
 
             <div class="grid grid-cols-2 gap-6 mb-8">
