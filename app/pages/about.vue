@@ -89,8 +89,7 @@
         <div class="h-1 w-20 bg-primary-600 mx-auto"></div>
       </div>
     </div>
-  </section>
-      
+
     <!-- Vision & Mission Section -->
     <section class="py-20 bg-gray-50 dark:bg-dark-900 transition-colors duration-300">
       <div class="container mx-auto px-4">
@@ -100,9 +99,9 @@
         </div>
       </div>
     </section>
-
+  </section>
+      
     <PurposePrinciples />
-
     <!-- Partners Section -->
     <section class="py-20 bg-gray-100 dark:bg-dark-800 transition-colors duration-300">
       <PartnersSection />
