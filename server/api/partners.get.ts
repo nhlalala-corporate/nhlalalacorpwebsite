@@ -44,17 +44,17 @@ export default defineEventHandler(() => {
     },
     {
       id: '7',
-      name: 'Lenovo',
-      logo: '/images/partners/lenovo.png',
-      category: 'Hardware',
-      description: 'Global technology leader in PC and smart device innovation.'
-    },
-    {
-      id: '8',
       name: 'ManagedEgine',
       logo: '/images/partners/ManageEngine.png',
       category: 'Software Solutions',
       description: 'Provider to take control of your IT, from your security, networks, and servers to your applications, service desk, Active Directory, desktops, and mobile devices.'
+    },
+    {
+      id: '8',
+      name: 'Lenovo',
+      logo: '/images/partners/lenovo.png',
+      category: 'Hardware',
+      description: 'Global technology leader in PC and smart device innovation.'
     },
     {
       id: '9',
