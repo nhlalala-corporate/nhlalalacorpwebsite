@@ -88,6 +88,8 @@
         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">Our Purpose and Principles</h2>
         <div class="h-1 w-20 bg-primary-600 mx-auto"></div>
       </div>
+    </div>
+  </section>
       
     <!-- Vision & Mission Section -->
     <section class="py-20 bg-gray-50 dark:bg-dark-900 transition-colors duration-300">
