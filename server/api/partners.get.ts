@@ -59,7 +59,7 @@ export default defineEventHandler(() => {
     {
       id: '9',
       name: 'NoThreat',
-      logo: '/images/partners/microsoft.png',
+      logo: '/images/partners/nothreat.png',
       category: 'Cybersecurity',
       description: 'AI-Driven Security That Learns Faster Than Attackers.'
     },
