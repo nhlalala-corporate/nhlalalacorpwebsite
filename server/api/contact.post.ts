@@ -156,7 +156,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
     // Send email with both HTML and text versions using the new email system
     const emailResult = await sendEmail({
-      to: process.env.DEFAULT_EMAIL_TO || 'info@nhlalala-co.za',
+      to: process.env.DEFAULT_EMAIL_TO || 'info@nhlalalacorp-co.za',
       subject: `Contact Form: ${formData.subject}`,
       html: htmlEmail,
       text: textEmail,

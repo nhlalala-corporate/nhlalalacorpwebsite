@@ -5,15 +5,15 @@ export default defineEventHandler(async (event) => {
   const testimonials = [
     {
       id: 1,
-      name: 'David Anderson',
-      position: 'IT Director, Department of Defence',
-      company: 'Department of Defence',
+      name: 'Matsobane Masenya',
+      position: 'IT Manager, PRASA',
+      company: 'PRASA',
       testimonial: 'Nhlalala Corporate delivered an exceptional cybersecurity solution that has significantly enhanced our data protection capabilities. Their team was professional and met all deadlines.',
-      avatar: '/images/avatars/default-avatar.png'
+      avatar: '/images/avatars/default-avatar-men.png'
     },
     {
       id: 2,
-      name: 'Sarah Moloi',
+      name: 'Thokozile Mahlaola',
       position: 'CEO, The Cherry Blue House',
       company: 'The Cherry Blue House',
       testimonial: 'The website developed by Nhlalala Corporate has transformed our online presence. We\'ve seen a 40% increase in customer engagement since launch.',
@@ -21,11 +21,11 @@ export default defineEventHandler(async (event) => {
     },
     {
       id: 3,
-      name: 'Mike Johnson',
-      position: 'CTO, African Tech Solutions',
-      company: 'African Tech Solutions',
-      testimonial: 'Their infrastructure solutions have been rock solid. Uptime has improved dramatically since we migrated to their platform.',
-      avatar: '/images/avatars/default-avatar.png'
+      name: 'Kaveer Harrilall',
+      position: 'Programme Manager, CSIR-SIM',
+      company: 'CSIR',
+      testimonial: 'Nhlalala Corporate delivered professional Business Analysis services to CSIR under the MCDP for Gamagara Local Municipality, demonstrating strong municipal insight and contributing to improved planning and decision-making.',
+      avatar: '/images/avatars/default-avatar-men.png'
     }
   ]
 
