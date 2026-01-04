@@ -10,7 +10,7 @@ vi.mock('#app', async () => {
     ...mod,
     useRuntimeConfig: () => ({
       public: {
-        recaptchaSiteKey: '6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov'
+        recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2'
       }
     })
   }
@@ -26,7 +26,7 @@ vi.mock('#imports', async () => {
     ...mod,
     useRuntimeConfig: () => ({
       public: {
-        recaptchaSiteKey: '6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov'
+        recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2'
       }
     })
   }

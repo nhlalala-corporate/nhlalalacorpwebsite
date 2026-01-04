@@ -26,8 +26,8 @@ Create a `.env` file in the project root (if needed):
 
 ```bash
 # Example environment variables
-SITE_URL=https://nhlalala-corporate.com
-NUXT_PUBLIC_SITE_URL=https://nhlalala-corporate.com
+SITE_URL=https://nhlalalacorp.co.za
+NUXT_PUBLIC_SITE_URL=https://nhlalalacorp.co.za
 ```
 
 ### 3. Development Server

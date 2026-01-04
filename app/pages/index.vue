@@ -106,7 +106,7 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://nhlalala-corporate.com'
+      content: process.env.SITE_URL || 'https://nhlalalacorp.co.za'
     },
     {
       property: 'og:type',
@@ -128,7 +128,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://nhlalala-corporate.com'
+      href: process.env.SITE_URL || 'https://nhlalalacorp.co.za'
     }
   ]
 })

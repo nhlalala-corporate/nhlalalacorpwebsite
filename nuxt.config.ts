@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     contactEmail: process.env.CONTACT_EMAIL,
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     public: {
-      siteUrl: process.env.SITE_URL || 'https://nhlalala-corporate.com',
+      siteUrl: process.env.SITE_URL || 'https://example.com',
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
     }
   },
@@ -111,14 +111,14 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://www.google.com/recaptcha/api.js?render=6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov', // Replace with your actual site key
+          src: process.env.RECAPTCHA_SITE_KEY ? `https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}` : 'https://www.google.com/recaptcha/api.js',
           defer: true
         },
       ],
     },
   },
   site: {
-    url: process.env.SITE_URL || 'https://nhlalala-corporate.com',
+    url: process.env.SITE_URL || 'https://example.com',
     name: 'Nhlalala Corporate',
     description: 'Premier technology services provider operating in Africa',
   },
@@ -134,7 +134,7 @@ export default defineNuxtConfig({
       name: 'Nhlalala Corporate',
       alternateName: 'Nhlalala Corp',
       description: 'Premier technology services provider operating in Africa',
-      url: 'https://nhlalala-corporate.com',
+      url: process.env.SITE_URL || 'https://nhlalalacorp.co.za',
       logo: '/images/logo.png',
       address: {
         '@type': 'PostalAddress',

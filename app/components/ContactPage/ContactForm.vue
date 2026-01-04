@@ -187,7 +187,10 @@ const handleSubmit = async () => {
   try {
     // Execute reCAPTCHA
     const config = useRuntimeConfig()
-    const recaptchaSiteKey = config.public.recaptchaSiteKey || process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2'
+    const recaptchaSiteKey = config.public.recaptchaSiteKey
+    if (!recaptchaSiteKey) {
+      throw new Error('reCAPTCHA site key is not configured in runtime config')
+    }
     const token = await executeRecaptcha('contact_form')
 
     // Prepare form data with reCAPTCHA token
@@ -236,8 +239,15 @@ const handleSubmit = async () => {
 // Function to execute reCAPTCHA
 const executeRecaptcha = (action) => {
   return new Promise((resolve, reject) => {
-    const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2' // Default/test key
-    
+    const config = useRuntimeConfig()
+    const recaptchaSiteKey = config.public.recaptchaSiteKey
+    if (!recaptchaSiteKey) {
+      console.error('reCAPTCHA site key is not configured in runtime config');
+      // For development or if reCAPTCHA key is not configured, return a dummy token
+      resolve('dummy-token-for-development');
+      return;
+    }
+
     if (typeof grecaptcha !== 'undefined') {
       grecaptcha.ready(() => {
         grecaptcha.execute(recaptchaSiteKey, { action })

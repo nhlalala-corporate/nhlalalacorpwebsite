@@ -19,7 +19,7 @@ export default defineEventHandler((event) => {
     settings: {
       siteTitle: 'Nhlalala Corporate',
       siteDescription: 'Premier technology services provider operating in Africa',
-      contactEmail: process.env.CONTACT_EMAIL || 'info@nhlalala-corporate.com',
+      contactEmail: process.env.CONTACT_EMAIL || 'info@nhlalalacorp.co.za',
       phone: '+27 72 622 3537',
       address: '4 Uniden, 192 Garden Drive, Meyerspark, Pretoria'
     }

@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
       position: 'CEO, The Cherry Blue House',
       company: 'The Cherry Blue House',
       testimonial: 'The website developed by Nhlalala Corporate has transformed our online presence. We\'ve seen a 40% increase in customer engagement since launch.',
-      avatar: '/images/avatars/default-avatar.png'
+      avatar: '/images/avatars/default-avatar-woman.png'
     },
     {
       id: 3,

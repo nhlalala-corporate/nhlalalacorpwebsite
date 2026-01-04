@@ -12,7 +12,7 @@ export default defineVitestConfig({
           // Any runtime config you want to override for tests
           runtimeConfig: {
             public: {
-              recaptchaSiteKey: '6LcNOeAqAAAAAKytEs1lmc6ic2-ft8iwFSVKDSov'
+              recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY || '6Lco1TUsAAAAAFrh1KB1Yi2Yul73U74-b4fsxaU2'
             }
           }
         }

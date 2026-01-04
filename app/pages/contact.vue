@@ -122,7 +122,7 @@ useHead({
     },
     {
       property: 'og:url',
-      content: 'https://nhlalala-corporate.com/contact'
+      content: `${process.env.SITE_URL || 'https://nhlalalacorp.co.za'}/contact`
     },
     {
       name: 'twitter:title',
