@@ -109,7 +109,7 @@
             </li>
             <li class="flex items-start">
               <PhoneIcon class="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
-              <span class="text-gray-400">+27 72 622 3537</span>
+              <span class="text-gray-400">+27 72 622 5537</span>
             </li>
             <li class="flex items-start">
               <ClockIcon class="w-5 h-5 text-gray-400 mr-3 mt-0.5 flex-shrink-0" />
