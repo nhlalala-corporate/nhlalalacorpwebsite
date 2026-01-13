@@ -130,7 +130,7 @@ useHead({
     },
     {
       name: 'twitter:description',
-      content: 'Get in touch with Nhlalala Corporate. Reach us at 4 Uniden, 192 Garden Drive, Meyerspark, Pretoria or call +27 72 622 3537.'
+      content: 'Get in touch with Nhlalala Corporate. Reach us at 4 Uniden, 192 Garden Drive, Meyerspark, Pretoria or call +27 72 622 5537.'
     }
   ]
 })
