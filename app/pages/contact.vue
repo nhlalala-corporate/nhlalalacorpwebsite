@@ -50,7 +50,7 @@
                 </div>
                 <div>
                   <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Phone</h3>
-                  <p class="text-gray-600 dark:text-gray-400">+27 72 622 3537</p>
+                  <p class="text-gray-600 dark:text-gray-400">+27 72 622 5537</p>
                 </div>
               </div>
               
@@ -110,7 +110,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Get in touch with Nhlalala Corporate. Reach us at 4 Uniden, 192 Garden Drive, Meyerspark, Pretoria or call +27 72 622 3537.'
+      content: 'Get in touch with Nhlalala Corporate. Reach us at 4 Uniden, 192 Garden Drive, Meyerspark, Pretoria or call +27 72 622 5537.'
     },
     {
       property: 'og:title',
@@ -118,7 +118,7 @@ useHead({
     },
     {
       property: 'og:description',
-      content: 'Get in touch with Nhlalala Corporate. Reach us at 4 Uniden, 192 Garden Drive, Meyerspark, Pretoria or call +27 72 622 3537.'
+      content: 'Get in touch with Nhlalala Corporate. Reach us at 4 Uniden, 192 Garden Drive, Meyerspark, Pretoria or call +27 72 622 5537.'
     },
     {
       property: 'og:url',
