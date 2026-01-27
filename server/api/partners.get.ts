@@ -65,6 +65,20 @@ export default defineEventHandler(() => {
     },
     {
       id: '10',
+      name: 'Commvault',
+      logo: '/images/partners/Commvault.png',
+      category: 'Data Protection & Cyber Resilience Software',
+      description: 'The only cloud-native platform that unifies data security, identity resilience and cyber recovery at enterprise scale.'
+    },
+    {
+      id: '11',
+      name: 'Zoho',
+      logo: '/images/partners/zoho.png',
+      category: 'Software',
+      description: 'A unique and powerful software suite to transform the way you work.'
+    },
+    {
+      id: '12',
       name: 'Microsoft',
       logo: '/images/partners/microsoft.png',
       category: 'Software',
