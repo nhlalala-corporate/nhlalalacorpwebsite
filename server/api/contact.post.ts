@@ -1,6 +1,7 @@
 // server/api/contact.post.ts
 import type { H3Event } from 'h3'
 import { sendEmail } from '../utils/email'
+import { readMultipartFormData } from 'h3'
 
 interface ContactFormData {
   name: string
@@ -11,10 +12,103 @@ interface ContactFormData {
   'g-recaptcha-response'?: string
 }
 
+// Function to determine MIME type based on file extension
+const getMimeType = (filename: string): string => {
+  const extension = filename.toLowerCase().split('.').pop() || '';
+
+  const mimeTypes: Record<string, string> = {
+    // Document formats
+    'pdf': 'application/pdf',
+    'doc': 'application/msword',
+    'docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'xls': 'application/vnd.ms-excel',
+    'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'ppt': 'application/vnd.ms-powerpoint',
+    'pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+
+    // Image formats
+    'jpg': 'image/jpeg',
+    'jpeg': 'image/jpeg',
+    'png': 'image/png',
+    'gif': 'image/gif',
+    'bmp': 'image/bmp',
+    'svg': 'image/svg+xml',
+    'webp': 'image/webp',
+
+    // Text formats
+    'txt': 'text/plain',
+    'csv': 'text/csv',
+    'html': 'text/html',
+    'htm': 'text/html',
+
+    // Archive formats
+    'zip': 'application/zip',
+    'rar': 'application/vnd.rar',
+    'tar': 'application/x-tar',
+    'gz': 'application/gzip',
+
+    // Audio formats
+    'mp3': 'audio/mpeg',
+    'wav': 'audio/wav',
+    'ogg': 'audio/ogg',
+
+    // Video formats
+    'mp4': 'video/mp4',
+    'avi': 'video/x-msvideo',
+    'mov': 'video/quicktime',
+
+    // Default fallback
+    'default': 'application/octet-stream'
+  };
+
+  return mimeTypes[extension] || mimeTypes.default;
+};
+
 export default defineEventHandler(async (event: H3Event) => {
   try {
-    // Get form data from request body
-    const formData = await readBody(event) as ContactFormData
+    let formData: ContactFormData;
+    let fileBuffer: Buffer | null = null;
+    let fileName: string | null = null;
+
+    // Check if the request is multipart/form-data (for file uploads)
+    const contentType = event.node.req.headers['content-type'] || '';
+
+    if (contentType.toLowerCase().includes('multipart/form-data')) {
+      // Handle multipart form data with file upload
+      const parts = await readMultipartFormData(event);
+
+      const formFields: Record<string, any> = {};
+
+      for (const part of parts) {
+        if (part.name && part.data) {
+          // Check if this is a file by looking at the presence of a filename
+          // Sometimes the type might not be 'file' but the presence of a filename indicates a file
+          if (part.type === 'file' || part.filename) {
+            // Handle file attachment
+            fileBuffer = Buffer.from(part.data);
+            fileName = part.filename || 'attachment';
+          } else {
+            // Handle regular form fields
+            formFields[part.name] = part.data.toString();
+          }
+        }
+      }
+
+      // Convert form fields to the expected format
+      formData = {
+        name: formFields.name,
+        email: formFields.email,
+        phone: formFields.phone || undefined,
+        subject: formFields.subject,
+        message: formFields.message,
+        'g-recaptcha-response': formFields['g-recaptcha-response']
+      };
+
+    } else {
+      // Handle regular JSON request (no file upload)
+      const body = await readBody(event) as ContactFormData;
+      formData = body;
+    }
 
     // Validate required fields
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
@@ -22,6 +116,17 @@ export default defineEventHandler(async (event: H3Event) => {
         statusCode: 400,
         statusMessage: 'Missing required fields'
       })
+    }
+
+    // Check if the file is too large for the email provider
+    if (fileBuffer && fileName) {
+      const maxSizeForEmail = 25 * 1024 * 1024; // 25MB, typical limit for most email providers
+      if (fileBuffer.length > maxSizeForEmail) {
+        throw createError({
+          statusCode: 400,
+          statusMessage: `File size too large. Maximum allowed size is ${maxSizeForEmail / (1024 * 1024)}MB`
+        });
+      }
     }
 
     // Validate email format
@@ -161,6 +266,11 @@ export default defineEventHandler(async (event: H3Event) => {
       html: htmlEmail,
       text: textEmail,
       from: process.env.DEFAULT_EMAIL_FROM || process.env.MAIL_USER,
+      attachments: fileBuffer ? [{
+        filename: fileName!,
+        content: fileBuffer,
+        contentType: getMimeType(fileName!)
+      }] : undefined,
       spamIdentifier: event.node.req.socket.remoteAddress || 'unknown'
     })
 

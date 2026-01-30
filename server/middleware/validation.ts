@@ -1,5 +1,6 @@
 // server/middleware/validation.ts
 import type { H3Event } from 'h3'
+import { readMultipartFormData } from 'h3'
 
 // Validation functions based on data-model.md
 export const validateContactData = (data: any) => {
@@ -125,9 +126,29 @@ export default defineEventHandler(async (event: H3Event) => {
     return
   }
 
+  let body: any;
+
+  // Check content type to determine how to read the body
+  const contentType = event.node.req.headers['content-type'] || '';
+
+  if (contentType.includes('multipart/form-data')) {
+    // Handle multipart form data
+    const parts = await readMultipartFormData(event);
+    body = {};
+
+    for (const part of parts) {
+      if (part.name && part.data && part.type !== 'file') {
+        // Only process non-file fields
+        body[part.name] = part.data.toString();
+      }
+    }
+  } else {
+    // Handle regular JSON request
+    body = await readBody(event);
+  }
+
   // Check if we need to validate based on the endpoint
   if (url?.includes('/api/contact')) {
-    const body = await readBody(event)
     const validation = validateContactData(body)
 
     if (!validation.isValid) {
@@ -140,7 +161,6 @@ export default defineEventHandler(async (event: H3Event) => {
       })
     }
   } else if (url?.includes('/api/clients')) {
-    const body = await readBody(event)
     const validation = validateClientData(body)
 
     if (!validation.isValid) {
@@ -153,7 +173,6 @@ export default defineEventHandler(async (event: H3Event) => {
       })
     }
   } else if (url?.includes('/api/services')) {
-    const body = await readBody(event)
     const validation = validateServiceData(body)
 
     if (!validation.isValid) {

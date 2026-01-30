@@ -92,7 +92,7 @@
           accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
           aria-describedby="attachment-help"
         >
-        <p id="attachment-help" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Max file size: 5MB. Accepted formats: PDF, DOC, JPG, PNG</p>
+        <p id="attachment-help" class="text-sm text-gray-500 dark:text-gray-400 mt-1">Max file size: 10MB. Accepted formats: PDF, DOC, DOCX, JPG, PNG</p>
         <p v-if="errors.file" class="text-red-500 text-sm mt-1">{{ errors.file }}</p>
       </div>
 
@@ -128,13 +128,16 @@ const props = defineProps({
 
 const emit = defineEmits(['formSubmit', 'formSubmitSuccess', 'formSubmitError'])
 
+// Separate file storage to avoid reactivity issues with File objects
+const fileData = ref(null);
+
 const formData = ref({
   name: '',
   email: '',
   phone: '',
   subject: '',
   message: '',
-  file: null
+  // Note: file is handled separately to avoid potential reactivity issues with File objects
 })
 
 const errors = ref({})
@@ -155,17 +158,17 @@ const validateForm = () => {
   if (!formData.value.message) errors.value.message = 'Message is required'
 
   // File validation
-  if (formData.value.file) {
-    const file = formData.value.file
+  if (fileData.value) {
+    const file = fileData.value
     const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/png']
-    const maxSize = 5 * 1024 * 1024 // 5MB
+    const maxSize = 10 * 1024 * 1024 // 10MB
 
     if (!validTypes.includes(file.type)) {
       errors.value.file = 'File type not supported'
     }
 
     if (file.size > maxSize) {
-      errors.value.file = 'File size must be less than 5MB'
+      errors.value.file = 'File size must be less than 10MB'
     }
   }
 
@@ -173,13 +176,14 @@ const validateForm = () => {
 }
 
 const handleFileUpload = (event) => {
-  formData.value.file = event.target.files[0]
+  const file = event.target.files[0];
+  fileData.value = file;
 }
 
 const handleSubmit = async () => {
   if (!validateForm()) return
 
-  emit('formSubmit', formData.value)
+  emit('formSubmit', { ...formData.value, file: fileData.value })
 
   isSubmitting.value = true
   submitMessage.value = ''
@@ -201,10 +205,40 @@ const handleSubmit = async () => {
     }
 
     // Send form data to backend API
-    const response = await $fetch('/api/contact', {
-      method: 'POST',
-      body: formDataWithRecaptcha
-    })
+    let response;
+
+    // Check if there's a file to upload
+    const hasFile = !!fileData.value;
+
+    if (hasFile) {
+      // Create FormData object for file upload
+      const formDataToSend = new FormData();
+
+      // Append all form fields to FormData
+      for (const [key, value] of Object.entries(formDataWithRecaptcha)) {
+        if (key !== 'file' && value !== null && value !== undefined) {
+          formDataToSend.append(key, value);
+        }
+      }
+
+      // Append the file if it exists
+      if (fileData.value) {
+        formDataToSend.append('file', fileData.value, fileData.value.name);
+      }
+
+      // Send form data as multipart/form-data
+      response = await $fetch('/api/contact', {
+        method: 'POST',
+        body: formDataToSend,
+        // Don't set Content-Type header - let browser set it with boundary
+      });
+    } else {
+      // Send form data as JSON for regular submission
+      response = await $fetch('/api/contact', {
+        method: 'POST',
+        body: formDataWithRecaptcha
+      });
+    }
 
     // Show success message
     submitMessage.value = 'Your message has been sent successfully! We will get back to you soon.'
@@ -216,9 +250,11 @@ const handleSubmit = async () => {
       email: '',
       phone: '',
       subject: '',
-      message: '',
-      file: null
+      message: ''
     }
+
+    // Reset file data
+    fileData.value = null;
 
     // Reset file input
     const fileInput = document.getElementById('attachment')
@@ -229,7 +265,7 @@ const handleSubmit = async () => {
     console.error('Error submitting form:', error)
     submitMessage.value = 'There was an error sending your message. Please try again later.'
     submitMessageClass.value = 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
-    
+
     emit('formSubmitError', error)
   } finally {
     isSubmitting.value = false

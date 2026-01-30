@@ -14,23 +14,23 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-gray-50 dark:bg-dark-900 p-8 rounded-xl service-card transition-all duration-300 fade-in">
+          <div class="bg-gray-50 dark:bg-dark-900 p-8 rounded-xl service-card transition-all duration-300 fade-in flex flex-col items-center text-center">
             <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
               <i class="fas fa-lightbulb text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Innovation Driven</h3>
             <p class="text-gray-600 dark:text-gray-400">We leverage cutting-edge technologies to create solutions that give you a competitive advantage.</p>
           </div>
-          
-          <div class="bg-gray-50 dark:bg-dark-900 p-8 rounded-xl service-card transition-all duration-300 fade-in">
+
+          <div class="bg-gray-50 dark:bg-dark-900 p-8 rounded-xl service-card transition-all duration-300 fade-in flex flex-col items-center text-center">
             <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
               <i class="fas fa-users text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Client Focused</h3>
             <p class="text-gray-600 dark:text-gray-400">Your success is our priority. We work closely with you to understand your unique needs and challenges.</p>
           </div>
-          
-          <div class="bg-gray-50 dark:bg-dark-900 p-8 rounded-xl service-card transition-all duration-300 fade-in">
+
+          <div class="bg-gray-50 dark:bg-dark-900 p-8 rounded-xl service-card transition-all duration-300 fade-in flex flex-col items-center text-center">
             <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
               <i class="fas fa-shield-alt text-2xl"></i>
             </div>

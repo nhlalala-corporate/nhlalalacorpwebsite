@@ -157,6 +157,10 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['/', '/about', '/services', '/clients', '/contact']
+    },
+    // Configure multipart handling for file uploads
+    multipart: {
+      fileSize: '10mb',  // Increase max file size to 10MB
     }
   }
 })

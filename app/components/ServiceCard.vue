@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card bg-gray-50 dark:bg-dark-900 p-8 rounded-lg transition-all duration-300 fade-in">
+  <div class="service-card bg-gray-50 dark:bg-dark-900 p-8 rounded-lg transition-all duration-300 fade-in flex flex-col items-center text-center">
     <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center text-white mb-6">
       <component :is="service.icon" class="w-7 h-7" />
     </div>

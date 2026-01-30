@@ -117,6 +117,12 @@ export const sendEmail = async (options: EmailOptions): Promise<{ success: boole
     };
   } catch (error) {
     console.error('Error sending email:', error);
+    // Check if the error is related to attachment size
+    if ((error as Error).message.toLowerCase().includes('size') ||
+        (error as Error).message.toLowerCase().includes('message too large') ||
+        (error as Error).message.toLowerCase().includes('oversized')) {
+      console.error('Possible attachment size issue. Current attachment size might exceed SMTP provider limits.');
+    }
     throw new Error(`Failed to send email: ${(error as Error).message}`);
   }
 };
